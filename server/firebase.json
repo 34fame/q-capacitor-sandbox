@@ -1,0 +1,29 @@
+{
+   "firestore": {
+      "rules": "firestore.rules",
+      "indexes": "firestore.indexes.json"
+   },
+   "emulators": {
+      "functions": {
+         "host": "192.168.0.200",
+         "port": 5001
+      },
+      "firestore": {
+         "host": "192.168.0.200",
+         "port": 8081
+      },
+      "pubsub": {
+         "port": 8085
+      },
+      "ui": {
+         "enabled": true
+      },
+      "auth": {
+         "host": "192.168.0.200",
+         "port": 9099
+      }
+   },
+   "functions": {
+      "source": "functions"
+   }
+}

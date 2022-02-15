@@ -1,0 +1,18 @@
+{
+	"appId": "com.thirtyfourfame.apptest",
+	"appName": "Quasar App",
+	"bundledWebRuntime": false,
+	"npmClient": "yarn",
+	"webDir": "www",
+	"plugins": {
+		"FirebaseAuthentication": {
+			"skipNativeAuth": false,
+			"provider": [
+				"google.com"
+			]
+		}
+	},
+	"server": {
+		"url": "http://192.168.0.200:8080"
+	}
+}
