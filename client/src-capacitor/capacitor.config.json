@@ -1,13 +1,15 @@
 {
-   "appId": "com.thirtyfourfame.apptest",
-   "appName": "Quasar App",
-   "bundledWebRuntime": false,
-   "npmClient": "yarn",
-   "webDir": "www",
-   "plugins": {
-      "FirebaseAuthentication": {
-         "skipNativeAuth": false,
-         "provider": ["google.com"]
-      }
-   }
+  "appId": "com.thirtyfourfame.apptest",
+  "appName": "Quasar App",
+  "bundledWebRuntime": false,
+  "npmClient": "yarn",
+  "webDir": "www",
+  "plugins": {
+    "FirebaseAuthentication": {
+      "skipNativeAuth": false,
+      "provider": [
+        "google.com"
+      ]
+    }
+  }
 }
