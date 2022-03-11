@@ -12,10 +12,11 @@ def capacitor_pods
   pod 'CapacitorCommunityFcm', :path => '../../node_modules/@capacitor-community/fcm'
   pod 'CapacitorLocalNotifications', :path => '../../node_modules/@capacitor/local-notifications'
   pod 'CapacitorPushNotifications', :path => '../../node_modules/@capacitor/push-notifications'
+  pod 'RobingenzCapacitorFirebaseAuthentication', :path => '../../node_modules/@robingenz/capacitor-firebase-authentication'
 end
 
 target 'App' do
   capacitor_pods
   # Add your Pods here
-  pod 'RobingenzCapacitorFirebaseAuthentication', :path => '../../node_modules/@robingenz/capacitor-firebase-authentication'
+  pod 'RobingenzCapacitorFirebaseAuthentication/Google', :path => '../../node_modules/@robingenz/capacitor-firebase-authentication'
 end

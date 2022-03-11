@@ -8,36 +8,27 @@
 </template>
 
 <script>
-import { defineComponent, inject } from 'vue'
-import { Platform } from 'quasar'
-import {
-   GoogleAuthProvider,
-   signInWithRedirect,
-} from 'firebase/auth'
-import { FirebaseAuthentication } from '@robingenz/capacitor-firebase-authentication'
+import { defineComponent } from 'vue'
+import { useRouter } from 'vue-router'
+import { useStore } from 'vuex'
+
+import useAuth from 'src/lib/auth'
 
 export default defineComponent({
    name: 'GoogleLoginBtn',
 
    setup() {
-      const auth = inject('auth')
+      const router = useRouter()
+      const store = useStore()
+      const auth = useAuth()
 
       return {
          async signIn() {
             try {
-               if (Platform.is.capacitor) {
-                  try {
-                     console.log(
-                        'FirebaseAuthentication',
-                        FirebaseAuthentication
-                     )
-                     await FirebaseAuthentication.signInWithGoogle()
-                  } catch (error) {
-                     console.error('signIn', error.message)
-                  }
-                  console.log('done...', result)
-               } else {
-                  signInWithRedirect(auth, new GoogleAuthProvider())
+               const user = await auth.signInWithGoogle()
+               if (user) {
+                  store.commit('app/setUser', user)
+                  router.push({ name: 'home' })
                }
             } catch (error) {
                console.error('GoogleLoginBtn', 'signIn', error.message)

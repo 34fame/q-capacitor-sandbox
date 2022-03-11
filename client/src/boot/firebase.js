@@ -51,3 +51,5 @@ export default boot(async ({ app, router, store }) => {
    app.provide('auth', auth)
    app.provide('db', db)
 })
+
+export { auth, db }
